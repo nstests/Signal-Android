@@ -1,12 +1,7 @@
 name: Android CI
 
 on:
-  pull_request:
-  push:
-    branches:
-    - 'main'
-    - '4.**'
-    - '5.**'
+  workflow_dispatch:
 
 permissions:
   contents: read # to fetch code (actions/checkout)
@@ -14,7 +9,7 @@ permissions:
 jobs:
   build:
 
-    runs-on: ubuntu-latest-8-cores
+    runs-on: dimerun-k5-ubuntu2204
 
     steps:
     - uses: actions/checkout@v3
@@ -27,9 +22,6 @@ jobs:
         distribution: temurin
         java-version: 17
         cache: gradle
-
-    - name: Validate Gradle Wrapper
-      uses: gradle/wrapper-validation-action@v1
 
     - name: Build with Gradle
       run: ./gradlew qa --parallel
