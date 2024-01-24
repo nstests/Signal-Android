@@ -9,7 +9,7 @@ permissions:
 jobs:
   build:
 
-    runs-on: dimerun-k3-ubuntu2204
+    runs-on: dimerun-dev-runner-scale-set
 
     steps:
     - uses: actions/checkout@v3
