@@ -9,7 +9,7 @@ permissions:
 jobs:
   build:
 
-    runs-on: dimerun-k3-ubuntu2204
+    runs-on: dimerunv2
 
     steps:
     - uses: actions/checkout@v3
